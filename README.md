@@ -11,7 +11,8 @@ Install
 Install via composer
 
 ```
-composer require daotalent-distributor/hrsaas-service-single
+# TODO: 上线前改为 daotalent-distributor/hrsaas-service-single
+composer require lvtiansong-collab/hrsaas-service-single
 ```
 
 Generate config file
