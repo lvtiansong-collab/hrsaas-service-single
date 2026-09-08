@@ -1,0 +1,10 @@
+<?php
+
+namespace {{namespace}};
+
+use Wiltechsteam\HrsaasServiceSingle\Models\Staff as StaffModel;
+
+class Staff extends StaffModel
+{
+
+}

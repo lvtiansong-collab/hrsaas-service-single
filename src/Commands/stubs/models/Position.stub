@@ -1,0 +1,10 @@
+<?php
+
+namespace {{namespace}};
+
+use Wiltechsteam\HrsaasServiceSingle\Models\Position as PositionModel;
+
+class Position extends PositionModel
+{
+
+}

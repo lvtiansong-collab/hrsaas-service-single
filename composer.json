@@ -1,0 +1,33 @@
+{
+    "name": "daotalent-distributor/hrsaas-service-single",
+    "description": "daoTaLent HR data synchronization service via RabbitMQ",
+    "type": "library",
+    "version": "1.0.0",
+    "keywords": [
+        "laravel",
+        "daoTaLent",
+        "rabbitmq",
+        "hr",
+        "synchronization"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "laravel/framework": "^10.0",
+        "php-amqplib/php-amqplib": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wiltechsteam\\HrsaasServiceSingle\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wiltechsteam\\HrsaasServiceSingle\\HrsaasServiceSingleProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

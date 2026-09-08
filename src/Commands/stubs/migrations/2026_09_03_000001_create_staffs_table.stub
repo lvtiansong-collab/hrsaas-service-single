@@ -1,0 +1,86 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('staffs', function (Blueprint $table) {
+            $table->uuid('id');
+            $table->primary('id');
+            $table->uuid('user_id')->nullable();
+            $table->char('user_name', 50)->nullable();
+            $table->uuid('superior_id')->nullable();
+            $table->char('finger_print_number', 30)->nullable();
+            $table->uuid('department_id')->nullable();
+            $table->string('department_name', 200)->nullable();
+            $table->tinyInteger('fertility_status')->nullable();
+            $table->uuid('position_id')->nullable();
+            $table->string('position_name', 200)->nullable();
+            $table->uuid('group_id')->nullable();
+            $table->string('group_name', 200)->nullable();
+            $table->char('name_cn_long', 50)->nullable();
+            $table->char('name_en_long', 50)->nullable();
+            $table->tinyInteger('gender')->nullable();
+            $table->tinyInteger('marital_status')->nullable();
+            $table->date('dob')->nullable();
+            $table->char('nation', 10)->nullable();
+            $table->tinyInteger('education')->nullable();
+            $table->char('graduation_school', 50)->nullable();
+            $table->char('major', 30)->nullable();
+            $table->char('identity_card_number', 25)->nullable();
+            $table->char('phone_number', 50)->nullable();
+            $table->char('email', 50)->nullable();
+            $table->date('internship_start_date')->nullable();
+            $table->date('hired_date')->nullable();
+            $table->tinyInteger('political_status')->nullable();
+            $table->char('household_category', 10)->nullable();
+            $table->char('household_location', 50)->nullable();
+            $table->char('bank_name', 20)->nullable();
+            $table->char('bank_number', 30)->nullable();
+            $table->tinyInteger('contract_status')->nullable();
+            $table->char('work_place', 50)->nullable();
+            $table->string('emergency_contact', 255)->nullable();
+            $table->string('emergency_contact_phone_number', 255)->nullable();
+            $table->char('serial_number', 50)->nullable();
+            $table->string('address1', 250)->nullable();
+            $table->string('address2', 250)->nullable();
+            $table->tinyInteger('position_status')->nullable();
+            $table->tinyInteger('park_type')->nullable();
+            $table->dateTime('created_date')->nullable();
+            $table->uuid('created_by')->nullable();
+            $table->dateTime('last_modified_date')->nullable();
+            $table->uuid('last_modified_by')->nullable();
+            $table->tinyInteger('location_description')->nullable();
+            $table->uuid('company_id')->nullable();
+            $table->string('company_name', 200)->nullable();
+            $table->date('internship_end_date')->nullable();
+            $table->char('entrance_guard_number', 50)->nullable();
+            $table->char('seat_number', 50)->nullable();
+            $table->string('current_address', 250)->nullable();
+            $table->tinyInteger('country_code')->nullable();
+            $table->char('location_name', 80)->nullable();
+            $table->char('driver_code', 50)->nullable();
+            $table->char('badge', 50)->nullable();
+
+            // Indexes
+            $table->index(['department_id', 'group_id'], 'idx_department_group');
+            $table->index('user_name', 'idx_user_name');
+            $table->fullText(['user_name', 'group_name', 'department_name', 'company_name'], 'ft_user_info');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('staffs');
+    }
+};
