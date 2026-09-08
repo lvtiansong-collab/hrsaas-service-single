@@ -1,5 +1,5 @@
 {
-    "name": "daotalent-distributor/hrsaas-service-single",
+    "name": "lvtiansong-collab/hrsaas-service-single",
     "description": "daoTaLent HR data synchronization service via RabbitMQ",
     "type": "library",
     "version": "1.0.0",
