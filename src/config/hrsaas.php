@@ -108,7 +108,6 @@ return [
         "OrganizationAddedEvent" => \Wiltechsteam\HrsaasServiceSingle\Events\OrganizationAddedEvent::class,
         "OrganizationUpdatedEvent" => \Wiltechsteam\HrsaasServiceSingle\Events\OrganizationUpdatedEvent::class,
         "OrganizationDeletedEvent" => \Wiltechsteam\HrsaasServiceSingle\Events\OrganizationDeletedEvent::class,
-        "OrganizationMovedEvent" => \Wiltechsteam\HrsaasServiceSingle\Events\OrganizationMovedEvent::class,
 
         // 职位事件
         "PositionAddedEvent" => \Wiltechsteam\HrsaasServiceSingle\Events\PositionAddedEvent::class,
@@ -149,9 +148,6 @@ return [
         ],
         \Wiltechsteam\HrsaasServiceSingle\Events\OrganizationDeletedEvent::class => [
             \Wiltechsteam\HrsaasServiceSingle\Listeners\OrganizationDeletedEventListener::class,
-        ],
-        \Wiltechsteam\HrsaasServiceSingle\Events\OrganizationMovedEvent::class => [
-            \Wiltechsteam\HrsaasServiceSingle\Listeners\OrganizationMovedEventListener::class,
         ],
 
         // 职位事件

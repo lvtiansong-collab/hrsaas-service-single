@@ -1,6 +1,6 @@
 <?php
 
-namespace Wiltechsteam\FoundationServiceSingle\Models;
+namespace Wiltechsteam\HrsaasServiceSingle\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

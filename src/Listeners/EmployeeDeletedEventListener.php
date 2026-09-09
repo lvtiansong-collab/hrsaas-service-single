@@ -19,7 +19,13 @@ class EmployeeDeletedEventListener
         $staffModel = config('hrsaas.models_namespace') . '\Staff';
 
         try {
-            $staffModel::where('id', $staffId)->delete();
+            $staff = $staffModel::query()->find($staffId);
+
+            if (empty($staff)) {
+                return;
+            }
+
+            $staff->delete();
         } catch (\Throwable $e) {
             Log::error('员工删除同步失败', [
                 'message' => $e->getMessage(),

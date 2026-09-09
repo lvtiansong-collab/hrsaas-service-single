@@ -19,7 +19,13 @@ class OrganizationDeletedEventListener
         $unitModel = config('hrsaas.models_namespace') . '\Unit';
 
         try {
-            $unitModel::where('id', $unitId)->delete();
+            $unit = $unitModel::query()->find($unitId);
+
+            if (empty($unit)) {
+                return;
+            }
+
+            $unit->delete();
         } catch (\Throwable $e) {
             Log::error('组织删除同步失败', [
                 'message' => $e->getMessage(),

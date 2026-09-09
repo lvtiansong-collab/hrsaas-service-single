@@ -19,7 +19,13 @@ class PositionDeletedEventListener
         $positionModel = config('hrsaas.models_namespace') . '\Position';
 
         try {
-            $positionModel::where('id', $positionId)->delete();
+            $position = $positionModel::query()->find($positionId);
+
+            if (empty($position)) {
+                return;
+            }
+
+            $position->delete();
         } catch (\Throwable $e) {
             Log::error('职位删除同步失败', [
                 'message' => $e->getMessage(),
